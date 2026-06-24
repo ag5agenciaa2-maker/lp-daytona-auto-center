@@ -1,0 +1,16 @@
+# Material interno (não faz parte do site publicado)
+Docs/
+
+# Sistema operacional / OneDrive
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configurações pessoais de IDE
+.vscode/
+.idea/
+
+# Ambiente e segredos
+.env
+*.log
+tmp/

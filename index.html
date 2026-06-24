@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daytona Auto Center | Paciência - RJ</title>
+  <meta name="description" content="Oficina mecânica completa em Paciência, Rio de Janeiro. Especializada em suspensão, freio, escapamento, geometria e pneus. Preço justo e ágil." />
+  <link rel="icon" href="Assets/favicon-daytona-auto-center.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cookie-banner.css">
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header id="nav" class="nav">
+    <div class="container nav__inner">
+      <a href="#topo" class="brand">
+        <img src="Assets/logo-daytona-auto-center-oficina.webp" alt="Logo Daytona Auto Center – oficina mecânica em Paciência RJ" class="brand__logo"/>
+        <span class="brand__name">DAYTONA<span class="brand__sub">AUTO CENTER</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="#hero" class="nav__link">Início</a>
+        <a href="#servicos" class="nav__link">Serviços</a>
+        <a href="#oficina" class="nav__link">Oficina</a>
+        <a href="#sobre" class="nav__link">Sobre</a>
+        <a href="#depoimentos" class="nav__link">Avaliações</a>
+        <a href="#localizacao" class="nav__link">Localização</a>
+      </nav>
+      <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Daytona." target="_blank" rel="noopener" class="btn btn--primary btn--xs nav__cta-desktop">Agendar avaliação</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="hero">
+    <span id="topo" style="position:absolute;top:0;"></span>
+    <video autoplay muted loop playsinline poster="Assets/daytona-oficina-elevadores-carros-classicos.webp" class="hero__video">
+      <source src="Assets/daytona-video-oficina-elevadores.mp4" type="video/mp4"/>
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="hero__overlay2"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="badge">
+          <span class="badge__dot"></span>
+          <span>Paciência · Rio de Janeiro</span>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__title--mask">Daytona</span>
+          <span>Auto Center</span>
+        </h1>
+        <p class="hero__sub">Oficina completa desde 2003. Suspensão, freio, escapamento, geometria e pneus — atendimento transparente, justo no preço e ágil.</p>
+        <div class="hero__actions">
+          <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Daytona." target="_blank" rel="noopener" class="btn btn--primary">Agendar avaliação →</a>
+          <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__rating"><span class="hero__rating-num">4.8</span><span class="stars">★★★★★</span><span>170 avaliações</span></div>
+          <div class="divider"></div>
+          <div>Orçamento <strong>gratuito</strong> · Buscamos seu veículo</div>
+        </div>
+      </div>
+    </div>
+    <div class="flag-strip"></div>
+  </section>
+
+  <!-- ================= PHOTO MARQUEE ================= -->
+  <section class="marquee-section">
+    <div class="marquee">
+      <div class="marquee__track" data-mq>
+        <div class="marquee__group">
+          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Interior da oficina Daytona Auto Center com elevadores automotivos e Fusca clássico" style="width:330px;"/>
+          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da Daytona com Kombis VW clássicas em manutenção" style="width:280px;"/>
+          <img src="Assets/daytona-fusca-elevador-servico-mecanico.webp" alt="Fusca vermelho clássico elevado em elevador automotivo na Daytona" style="width:380px;"/>
+          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da oficina Daytona com veículos VW clássicos" style="width:300px;object-position:center 30%;"/>
+          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Oficina Daytona Auto Center com elevadores e carros em serviço" style="width:340px;object-position:right;"/>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="" style="width:330px;"/>
+          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="" style="width:280px;"/>
+          <img src="Assets/daytona-fusca-elevador-servico-mecanico.webp" alt="" style="width:380px;"/>
+          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="" style="width:300px;object-position:center 30%;"/>
+          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="" style="width:340px;object-position:right;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEXT MARQUEE BAR ================= -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Daytona Auto Center&nbsp;&nbsp;·&nbsp;&nbsp;Suspensão&nbsp;&nbsp;·&nbsp;&nbsp;Freio&nbsp;&nbsp;·&nbsp;&nbsp;Escapamento&nbsp;&nbsp;·&nbsp;&nbsp;Geometria&nbsp;&nbsp;·&nbsp;&nbsp;Lubrificante&nbsp;&nbsp;·&nbsp;&nbsp;Pneus&nbsp;&nbsp;·&nbsp;&nbsp;Paciência-RJ&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+      <span aria-hidden="true">Daytona Auto Center&nbsp;&nbsp;·&nbsp;&nbsp;Suspensão&nbsp;&nbsp;·&nbsp;&nbsp;Freio&nbsp;&nbsp;·&nbsp;&nbsp;Escapamento&nbsp;&nbsp;·&nbsp;&nbsp;Geometria&nbsp;&nbsp;·&nbsp;&nbsp;Lubrificante&nbsp;&nbsp;·&nbsp;&nbsp;Pneus&nbsp;&nbsp;·&nbsp;&nbsp;Paciência-RJ&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ================= IMPACTO ================= -->
+  <section id="impacto" class="section">
+    <div class="container impact">
+      <div class="reveal">
+        <span class="eyebrow">Antes de pegar a estrada</span>
+        <h2 class="h2">Carro puxando<br/>pro lado? <span class="accent">Barulho</span><br/>na suspensão?</h2>
+        <p class="lead">Pequenos sinais viram problemas caros. Faça uma revisão completa numa oficina que avalia com transparência — e cobra um preço justo.</p>
+      </div>
+      <div class="reveal impact__solution" data-delay="120">
+        <h3 class="card__title">A solução Daytona</h3>
+        <div class="checks">
+          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Orçamento gratuito</strong><span>Sem compromisso e sem surpresas na conta.</span></div></div>
+          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Buscamos seu veículo</strong><span>Disponibilidade para buscar o carro até você.</span></div></div>
+          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Equipe grande e ágil</strong><span>Mais mãos qualificadas, serviço entregue rápido.</span></div></div>
+        </div>
+        <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20gratuito." target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:26px;">Quero meu orçamento grátis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVIÇOS ================= -->
+  <section id="servicos" class="section section--alt">
+    <div class="container">
+      <div class="reveal section__head">
+        <span class="eyebrow">O que fazemos</span>
+        <h2 class="h2">Oficina completa,<br/>em um só lugar</h2>
+        <p class="lead">Seis especialidades para veículos leves, pick-ups e clássicos — com a cultura VW que move a casa.</p>
+      </div>
+      <div class="services__grid">
+        <article class="reveal service-card">
+          <span class="service-card__num">01</span>
+          <h3 class="service-card__title">Suspensão</h3>
+          <p class="service-card__desc">Diagnóstico e troca de componentes para veículos leves e pick-ups — sem ruídos, sem folgas.</p>
+        </article>
+        <article class="reveal service-card" data-delay="80">
+          <span class="service-card__num">02</span>
+          <h3 class="service-card__title">Freio</h3>
+          <p class="service-card__desc">Pastilhas, discos, fluido e revisão completa do sistema — sua segurança em primeiro lugar.</p>
+        </article>
+        <article class="reveal service-card" data-delay="160">
+          <span class="service-card__num">03</span>
+          <h3 class="service-card__title">Escapamento</h3>
+          <p class="service-card__desc">Sistemas originais e adaptações esportivas — do econômico ao ronco de pista.</p>
+        </article>
+        <article class="reveal service-card">
+          <span class="service-card__num">04</span>
+          <h3 class="service-card__title">Geometria</h3>
+          <p class="service-card__desc">Alinhamento, balanceamento, cambagem, caster e montagem de pneus com precisão.</p>
+        </article>
+        <article class="reveal service-card" data-delay="80">
+          <span class="service-card__num">05</span>
+          <h3 class="service-card__title">Lubrificante</h3>
+          <p class="service-card__desc">Óleos de motor e câmbio, nacionais e importados — a viscosidade certa pro seu carro.</p>
+        </article>
+        <article class="reveal service-card" data-delay="160">
+          <span class="service-card__num">06</span>
+          <h3 class="service-card__title">Pneus</h3>
+          <p class="service-card__desc">Pneus novos e remold, com montagem na hora e balanceamento incluso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFICINA ================= -->
+  <section id="oficina" class="section" style="background:#0d0d0f;">
+    <div class="container">
+      <div class="reveal section__head">
+        <span class="eyebrow">Dentro do galpão</span>
+        <h2 class="h2">Oficina viva,<br/>operação real</h2>
+        <p class="lead">Pé-direito alto, elevadores duplos e um acervo clássico que passa por aqui todo dia. Veja como é por dentro.</p>
+      </div>
+      <div class="gallery">
+        <div class="reveal gallery__item">
+          <video autoplay muted loop playsinline poster="Assets/daytona-galpao-kombis-vw-classicas.webp">
+            <source src="Assets/daytona-video-servico-execucao.mp4" type="video/mp4"/>
+          </video>
+          <div class="gallery__shade"></div>
+          <div class="gallery__tag"><span class="badge__dot"></span><span>Serviço em execução</span></div>
+        </div>
+        <div class="reveal gallery__item" data-delay="100">
+          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Interior da oficina Daytona Auto Center com elevadores automotivos e Fusca clássico em manutenção – Paciência RJ"/>
+        </div>
+        <div class="reveal gallery__item" data-delay="200">
+          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da Daytona Auto Center com Kombis VW clássicas em manutenção e rack de escapamentos – oficina em Paciência RJ"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section id="sobre" class="section">
+    <div class="container about">
+      <div class="reveal about__media">
+        <video autoplay muted loop playsinline poster="Assets/daytona-fusca-elevador-servico-mecanico.webp">
+          <source src="Assets/daytona-video-galpao-vw-classicos.mp4" type="video/mp4"/>
+        </video>
+        <div class="about__shade"></div>
+        <img src="Assets/logo-daytona-auto-center-oficina.webp" alt="Logo Daytona Auto Center – oficina mecânica em Paciência, Rio de Janeiro" class="about__logo"/>
+      </div>
+      <div class="reveal" data-delay="120">
+        <span class="eyebrow">Desde 2003</span>
+        <h2 class="h2" style="font-size:clamp(36px,5.4vw,72px);">O legado de<br/>dois irmãos</h2>
+        <p class="lead">A Daytona nasceu em 2003 do sonho de dois irmãos de dar continuidade à profissão e ao legado do pai. Mais de duas décadas depois, é uma oficina completa em Paciência — referência em confiança, preço justo e agilidade na Zona Oeste do Rio.</p>
+        <div class="counters">
+          <div class="counter"><div class="counter__num" data-count="23" data-suffix="+">0</div><div class="counter__label">anos de estrada</div></div>
+          <div class="counter"><div class="counter__num" data-count="170" data-suffix="+">0</div><div class="counter__label">avaliações Google</div></div>
+          <div class="counter"><div class="counter__num" data-count="4.8" data-dec="1">0</div><div class="counter__label">nota média ★</div></div>
+          <div class="counter"><div class="counter__num" data-count="6">0</div><div class="counter__label">especialidades</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEPOIMENTOS ================= -->
+  <section id="depoimentos" class="section reviews">
+    <div class="container reviews__inner">
+      <div class="reveal">
+        <span class="eyebrow">Quem confia, recomenda</span>
+        <div class="rating">
+          <span class="rating__num">4.8</span>
+          <div class="rating__meta">
+            <div class="stars stars--lg">★★★★★</div>
+            <div class="muted" style="font-size:13px;">170 avaliações ·
+              <span class="google"><span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal review-stage" data-delay="100">
+        <div class="review-slide is-active" data-slide>
+          <p class="review-quote">"São os melhores da nossa região. Sempre foram transparentes nas avaliações e justos no preço. Recomendo sempre!"</p>
+          <div class="stars" style="margin-top:24px;font-size:16px;letter-spacing:3px;">★★★★★</div>
+          <div class="review-author">Douglas Brasil <span style="color:var(--gold);font-size:12px;font-weight:500;">· Local Guide</span></div>
+        </div>
+        <div class="review-slide" data-slide>
+          <p class="review-quote">"Ótimo atendimento, serviço de qualidade e muito ágil — sem contar que é uma oficina completa, da mecânica à funilaria!"</p>
+          <div class="stars" style="margin-top:24px;font-size:16px;letter-spacing:3px;">★★★★★</div>
+          <div class="review-author">Gabriel Ferreira</div>
+        </div>
+        <div class="review-slide" data-slide>
+          <p class="review-quote">"Experiência muito boa, a equipe é excelente. Atendimento diferenciado e uma equipe grande que faz o trabalho bem rápido."</p>
+          <div class="stars" style="margin-top:24px;font-size:16px;letter-spacing:3px;">★★★★★</div>
+          <div class="review-author">Alyson Barbosa</div>
+        </div>
+        <div class="review-slide" data-slide>
+          <p class="review-quote">"Fiz orçamento em três lugares, mas o que mais me agradou foi este. Muito bom atendimento em todos os aspectos. Estão de parabéns."</p>
+          <div class="stars" style="margin-top:24px;font-size:16px;letter-spacing:3px;">★★★★★</div>
+          <div class="review-author">MLC Pré-Moldados</div>
+        </div>
+        <div class="review-slide" data-slide>
+          <p class="review-quote">"O melhor atendimento, funcionários capacitados e preços excelentes."</p>
+          <div class="stars" style="margin-top:24px;font-size:16px;letter-spacing:3px;">★★★★★</div>
+          <div class="review-author">Flavio Vieira</div>
+        </div>
+      </div>
+      <div class="reviews__nav">
+        <button class="arrow" data-prev aria-label="Anterior">‹</button>
+        <div class="dots">
+          <span class="dot is-active" data-dot></span>
+          <span class="dot" data-dot></span>
+          <span class="dot" data-dot></span>
+          <span class="dot" data-dot></span>
+          <span class="dot" data-dot></span>
+        </div>
+        <button class="arrow" data-next aria-label="Próximo">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="section">
+    <div class="container container--narrow">
+      <div class="reveal" style="margin-bottom:clamp(30px,4vw,48px);">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2 class="h2" style="font-size:clamp(34px,5vw,64px);">Tire suas dúvidas</h2>
+      </div>
+      <div class="reveal faq" data-delay="80">
+        <div class="faq__item">
+          <button class="faq__q">Vocês buscam o veículo?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Sim. Conforme a disponibilidade, podemos buscar seu carro para realizar o orçamento e o serviço. Fale com a gente pelo WhatsApp.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Cobram para fazer orçamento?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Não. O orçamento é gratuito e sem compromisso. Avaliamos com transparência antes de qualquer serviço.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Quais as formas de pagamento?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Dinheiro, Pix, Cartão de Débito, Cartão de Crédito e Boleto.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Qual o horário de atendimento?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Segunda a sexta, das 8h às 18h. Sábado e domingo fechado.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Tem Wi-Fi e acessibilidade?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Sim. Wi-Fi disponível para clientes, assento e banheiro acessíveis para cadeira de rodas.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Atendem carros clássicos?<span class="faq__icon">+</span></button>
+          <div class="faq__a"><p>Sim. Temos forte cultura VW e atendemos veículos leves, pick-ups e clássicos.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCALIZAÇÃO ================= -->
+  <section id="localizacao" class="section" style="background:#0d0d0f;">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:clamp(30px,4vw,48px);max-width:640px;">
+        <span class="eyebrow">Onde estamos</span>
+        <h2 class="h2" style="font-size:clamp(36px,5.4vw,72px);">Paciência,<br/>Rio de Janeiro</h2>
+      </div>
+      <div class="location">
+        <div class="reveal location__aside">
+          <div class="info-card">
+            <span class="info-card__title">Endereço</span>
+            <p>R. Sertãozinho, 3 — quadra 3<br/>Paciência, Rio de Janeiro — RJ<br/>CEP 23585-200</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Daytona+auto+Center&destination_place_id=ChIJH-UuiNXkmwARNv2cjjDU1u4" target="_blank" rel="noopener" class="btn btn--primary btn--xs">Como chegar →</a>
+          </div>
+          <div class="info-card">
+            <span class="info-card__title">Contato &amp; Horário</span>
+            <p><a href="tel:+5521974559710" class="link">(21) 97455-9710</a><br/><span class="muted">Seg. a Sex. 8h–18h · Sáb. e Dom. fechado</span></p>
+            <div class="chips">
+              <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20uma%20informa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="chip">WhatsApp</a>
+              <a href="https://www.instagram.com/daytona_autocenter" target="_blank" rel="noopener" class="chip">Instagram</a>
+              <a href="https://share.google/eH89ZnzVQ7nUvFb6v" target="_blank" rel="noopener" class="chip">Google</a>
+            </div>
+          </div>
+          <div class="info-card tour-card">
+            <span class="info-card__title">Tour Virtual 360°</span>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1782049633601!6m8!1m7!1sPovFx_2BhZ5x0MtEBpHPLQ!2m2!1d-22.92299075072231!2d-43.63491085626121!3f188.3137532281146!4f10.612401735204898!5f0.4000000000000002" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="reveal map-frame" data-delay="120">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.73630776008!2d-43.634986999999995!3d-22.923095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be4d5882ee51f%3A0xeed6d4308e9cfd36!2sDaytona%20auto%20Center!5e0!3m2!1spt-BR!2sbr!4v1782049547362!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTATO ================= -->
+  <section id="contato" class="section contact">
+    <div class="flag-strip flag-strip--top"></div>
+    <div class="container container--mid contact__grid">
+      <div class="reveal">
+        <span class="eyebrow">Bora resolver</span>
+        <h2 class="h2" style="font-size:clamp(36px,5.4vw,72px);">Agende sua<br/>avaliação</h2>
+        <p class="lead">Mande sua mensagem e a gente responde rápido pelo WhatsApp. Orçamento gratuito, sem compromisso.</p>
+        <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20uma%20informa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="wa-card">
+          <span class="wa-card__icon">W</span>
+          <span><span class="wa-card__label">WhatsApp direto</span><span class="wa-card__num">(21) 97455-9710</span></span>
+        </a>
+      </div>
+      <form id="lead-form" class="reveal form" data-delay="120" novalidate>
+        <div class="field">
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" type="text" placeholder="Seu nome"/>
+        </div>
+        <div class="field">
+          <label for="f-email">E-mail</label>
+          <input id="f-email" type="email" placeholder="seu@email.com"/>
+        </div>
+        <div class="field">
+          <label for="f-tel">Telefone / WhatsApp</label>
+          <input id="f-tel" type="tel" inputmode="numeric" placeholder="(21) 90000-0000"/>
+        </div>
+        <div class="field">
+          <label for="f-servico">Serviço</label>
+          <select id="f-servico" required>
+            <option value="" disabled selected>Selecione o serviço</option>
+            <option value="Suspensão">Suspensão</option>
+            <option value="Freio">Freio</option>
+            <option value="Escapamento">Escapamento</option>
+            <option value="Geometria">Geometria</option>
+            <option value="Lubrificante">Lubrificante</option>
+            <option value="Pneus">Pneus</option>
+            <option value="Outro / Não sei dizer">Outro / Não sei dizer</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Mensagem <span class="field__opt">(opcional)</span></label>
+          <textarea id="f-msg" rows="3" placeholder="Conte o que seu carro está precisando"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary form__submit">Enviar pelo WhatsApp</button>
+        <div id="form-feedback" class="form__feedback"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="https://share.google/eH89ZnzVQ7nUvFb6v" target="_blank" rel="noopener" class="brand">
+          <img src="Assets/logo-daytona-auto-center-oficina.webp" alt="Logo Daytona Auto Center – oficina mecânica em Paciência, Rio de Janeiro, com coroa dourada e bandeiras de corrida" class="brand__logo brand__logo--lg"/>
+          <span class="brand__name" style="font-size:22px;">DAYTONA<span class="brand__sub" style="font-size:11px;">AUTO CENTER</span></span>
+        </a>
+        <p class="footer__about">Oficina completa desde 2003 em Paciência, RJ. Confiança de pista, preço justo e legado de família.</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Contato</span>
+        <a href="tel:+5521974559710" class="footer__link">(21) 97455-9710</a>
+        <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20uma%20informa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="footer__link">WhatsApp</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Daytona+auto+Center&destination_place_id=ChIJH-UuiNXkmwARNv2cjjDU1u4" target="_blank" rel="noopener" class="footer__link">R. Sertãozinho, 3 — Paciência, RJ</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Redes</span>
+        <a href="https://www.instagram.com/daytona_autocenter" target="_blank" rel="noopener" class="footer__link">Instagram · @daytona_autocenter</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer__link">Facebook · Daytona Auto Center</a>
+        <a href="https://share.google/eH89ZnzVQ7nUvFb6v" target="_blank" rel="noopener" class="footer__link">Google · 4.8 ★ (170)</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Horário</span>
+        <span class="footer__text">Seg — Sex · 8h às 18h</span>
+        <span class="footer__text footer__text--muted">Sáb & Dom · Fechado</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <div class="footer__legal">
+        <span>© Daytona Auto Center 2026</span>
+        <span class="footer-legal-links">
+          <a href="#" id="ck-prefs-link" style="text-decoration:none; color:inherit; display:inline-flex; align-items:center; gap:6px;">
+            <span id="cookie-toggle" style="display:inline-flex; align-items:center; width:28px; height:14px; background:rgba(244,242,238,0.08); border-radius:10px; padding:2px; border:1px solid rgba(244,242,238,0.18); position:relative; font-size:8px; font-weight:bold;">
+              <span style="color:#86EFAC; margin-left:2px;">✓</span>
+              <span style="color:#FCA5A5; margin-left:auto; margin-right:2px;">✕</span>
+              <span id="cookie-toggle-dot" style="position:absolute; left:15px; width:10px; height:10px; background:var(--ck-accent); border-radius:50%; box-shadow:0 0 5px rgba(0,0,0,0.3); transition:left .2s ease;"></span>
+            </span>
+            Cookies
+          </a>
+          <span class="sep">|</span>
+          <a href="termos-e-condicoes.html">Termos e Condições</a>
+          <span class="sep">|</span>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        </span>
+      </div>
+      <span>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener" class="footer__ag5">AG5 Agência</a></span>
+    </div>
+  </footer>
+
+  <!-- ================= DRAWER MOBILE ================= -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="#topo" class="brand">
+        <img src="Assets/logo-daytona-auto-center-oficina.webp" alt="Logo Daytona Auto Center" class="brand__logo" style="height:42px;"/>
+        <span class="brand__name" style="font-size:18px;">DAYTONA<span class="brand__sub">AUTO CENTER</span></span>
+      </a>
+      <button id="drawer-close" class="drawer__close" aria-label="Fechar menu">&times;</button>
+    </div>
+    <nav class="drawer__nav">
+      <a href="#hero" class="drawer__link">Início</a>
+      <a href="#servicos" class="drawer__link">Serviços</a>
+      <a href="#oficina" class="drawer__link">Oficina</a>
+      <a href="#sobre" class="drawer__link">Sobre</a>
+      <a href="#depoimentos" class="drawer__link">Avaliações</a>
+      <a href="#localizacao" class="drawer__link">Localização</a>
+      <a href="#contato" class="drawer__link">Contato</a>
+    </nav>
+    <div class="drawer__footer">
+      <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Daytona." target="_blank" rel="noopener" class="btn btn--primary" style="width:100%;justify-content:center;font-size:15px;padding:14px 20px;">Agendar avaliação</a>
+      <div class="drawer__info">
+        <a href="tel:+5521974559710" class="drawer__info-link">(21) 97455-9710</a>
+        <span class="drawer__info-text">Seg — Sex · 8h às 18h</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= WHATSAPP PREMIUM ================= -->
+  <div class="wa-premium-container">
+    <div id="wa-message-bubble" class="wa-bubble">
+      <button class="wa-close" id="wa-close-btn" aria-label="Fechar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="wa-content">
+        <div class="wa-header">
+          <div class="wa-avatar-wrapper">
+            <img src="Assets/logo-daytona-auto-center-oficina.webp" alt="Daytona Auto Center" class="wa-avatar" width="46" height="46">
+            <span class="wa-status-dot"></span>
+          </div>
+          <div class="wa-info">
+            <span class="wa-name">Daytona Auto Center</span>
+            <span class="wa-status-text">Online agora</span>
+          </div>
+        </div>
+        <div id="wa-typing" class="wa-typing"><span></span><span></span><span></span></div>
+        <div id="wa-real-message" class="wa-message-text" style="display:none;">
+          <p>Olá! 👋 Aqui é da <strong>Daytona Auto Center</strong>. Quer agendar uma avaliação ou tirar uma dúvida sobre seu carro? É só chamar!</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20uma%20informa%C3%A7%C3%A3o." class="wa-float-btn" target="_blank" rel="noopener noreferrer" id="wa-main-btn" role="button" aria-label="Falar pelo WhatsApp">
+      <svg viewBox="0 0 16 16" width="32" height="32" fill="currentColor" aria-hidden="true">
+        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+      </svg>
+      <span class="wa-badge" id="wa-notification">1</span>
+    </a>
+  </div>
+
+  <!-- ================= COOKIE BANNER (LGPD) ================= -->
+  <div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies" aria-live="polite" aria-hidden="true">
+    <div class="ck-banner__inner">
+      <div class="ck-banner__content">
+        <h2 class="ck-banner__title">Valorizamos sua privacidade</h2>
+        <p class="ck-banner__text">
+          Utilizamos cookies para aprimorar sua experiência de navegação, exibir conteúdo
+          personalizado e analisar nosso tráfego. Ao clicar em <strong>"Aceitar todos"</strong>,
+          você concorda com nosso uso de cookies conforme nossa
+          <a href="politica-de-privacidade.html" class="ck-banner__link">Política de Privacidade</a>.
+        </p>
+      </div>
+      <div class="ck-banner__actions">
+        <button id="ck-customize" class="ck-btn ck-btn--ghost">Personalizar</button>
+        <button id="ck-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
+        <button id="ck-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL DE PERSONALIZAÇÃO ========== -->
+  <div id="ck-modal" class="ck-modal" role="dialog" aria-modal="true" aria-label="Personalizar preferências de cookies" aria-hidden="true">
+    <div class="ck-modal__overlay" id="ck-modal-overlay"></div>
+    <div class="ck-modal__box">
+      <div class="ck-modal__header">
+        <h2 class="ck-modal__title">Personalizar preferências de consentimento</h2>
+        <button class="ck-modal__close" id="ck-modal-close" aria-label="Fechar modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="ck-modal__body">
+        <p class="ck-modal__intro">
+          Utilizamos cookies para ajudar você a navegar com eficiência e executar certas funções.
+          Os cookies classificados como <strong>"Necessário"</strong> são essenciais para o
+          funcionamento básico do site e não podem ser desativados.
+        </p>
+
+        <!-- Necessário (sempre ativo) -->
+        <div class="ck-category">
+          <div class="ck-category__header">
+            <div class="ck-category__info">
+              <h3 class="ck-category__name">Necessário</h3>
+              <p class="ck-category__desc">Essenciais para o funcionamento do site. Não armazenam dados pessoalmente identificáveis.</p>
+            </div>
+            <span class="ck-category__badge">Sempre ativo</span>
+          </div>
+        </div>
+
+        <!-- Funcional -->
+        <div class="ck-category">
+          <div class="ck-category__header">
+            <div class="ck-category__info">
+              <h3 class="ck-category__name">Funcional</h3>
+              <p class="ck-category__desc">Ajudam a executar funcionalidades como compartilhamento em mídia social e recursos de terceiros.</p>
+            </div>
+            <label class="ck-toggle" aria-label="Ativar cookies funcionais">
+              <input type="checkbox" id="ck-functional" name="functional">
+              <span class="ck-toggle__slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Analítico -->
+        <div class="ck-category">
+          <div class="ck-category__header">
+            <div class="ck-category__info">
+              <h3 class="ck-category__name">Analítico</h3>
+              <p class="ck-category__desc">Usados para entender como os visitantes interagem com o site (visitantes, taxa de rejeição, etc.).</p>
+            </div>
+            <label class="ck-toggle" aria-label="Ativar cookies analíticos">
+              <input type="checkbox" id="ck-analytics" name="analytics">
+              <span class="ck-toggle__slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Desempenho -->
+        <div class="ck-category">
+          <div class="ck-category__header">
+            <div class="ck-category__info">
+              <h3 class="ck-category__name">Desempenho</h3>
+              <p class="ck-category__desc">Analisam índices de desempenho do site para oferecer melhor experiência ao visitante.</p>
+            </div>
+            <label class="ck-toggle" aria-label="Ativar cookies de desempenho">
+              <input type="checkbox" id="ck-performance" name="performance">
+              <span class="ck-toggle__slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Publicidade -->
+        <div class="ck-category">
+          <div class="ck-category__header">
+            <div class="ck-category__info">
+              <h3 class="ck-category__name">Publicidade</h3>
+              <p class="ck-category__desc">Entregam anúncios personalizados com base nas páginas visitadas anteriormente.</p>
+            </div>
+            <label class="ck-toggle" aria-label="Ativar cookies de publicidade">
+              <input type="checkbox" id="ck-advertising" name="advertising">
+              <span class="ck-toggle__slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="ck-modal__footer">
+        <button id="ck-modal-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
+        <button id="ck-modal-save" class="ck-btn ck-btn--ghost">Salvar Preferências</button>
+        <button id="ck-modal-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cookie-banner.js" defer></script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
