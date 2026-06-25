@@ -206,4 +206,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- galpão: som + expandir (lightbox) ---------- */
+  const galpaoItems = document.querySelectorAll('.galpao__item');
+  const lb = document.getElementById('galpao-lb');
+  const lbVideo = document.getElementById('galpao-lb-video');
+  const lbLabel = document.getElementById('galpao-lb-label');
+
+  const muteAllGalpao = () => {
+    galpaoItems.forEach((it) => {
+      const v = it.querySelector('video');
+      const b = it.querySelector('.galpao__sound');
+      if (v) v.muted = true;
+      if (b) { b.classList.remove('is-on'); b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', 'Ativar som'); }
+    });
+  };
+
+  galpaoItems.forEach((item) => {
+    const video = item.querySelector('video');
+    const playBtn = item.querySelector('.galpao__play');
+    const playBig = item.querySelector('.galpao__playbig');
+    const soundBtn = item.querySelector('.galpao__sound');
+    const expandBtn = item.querySelector('.galpao__expand');
+
+    if (video) {
+      const togglePlay = () => {
+        if (video.paused) {
+          muteAllGalpao();
+          video.muted = false;
+          if (soundBtn) {
+            soundBtn.classList.add('is-on');
+            soundBtn.setAttribute('aria-pressed', 'true');
+            soundBtn.setAttribute('aria-label', 'Desativar som');
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      };
+      const syncPlay = () => {
+        const paused = video.paused;
+        item.classList.toggle('is-paused', paused);
+        if (playBig) playBig.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+        if (playBtn) {
+          playBtn.classList.toggle('is-paused', paused);
+          playBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+          playBtn.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+        }
+      };
+      if (playBtn) playBtn.addEventListener('click', togglePlay);
+      if (playBig) playBig.addEventListener('click', togglePlay);
+      video.addEventListener('click', togglePlay);
+      video.addEventListener('play', syncPlay);
+      video.addEventListener('pause', syncPlay);
+      syncPlay();
+    }
+
+    if (soundBtn && video) soundBtn.addEventListener('click', () => {
+      const willUnmute = video.muted;
+      muteAllGalpao();
+      if (willUnmute) {
+        video.muted = false;
+        video.play().catch(() => {});
+        soundBtn.classList.add('is-on');
+        soundBtn.setAttribute('aria-pressed', 'true');
+        soundBtn.setAttribute('aria-label', 'Desativar som');
+      }
+    });
+
+    if (expandBtn && video) expandBtn.addEventListener('click', () => {
+      const source = video.querySelector('source');
+      const src = source ? source.src : video.currentSrc;
+      const labelEl = item.querySelector('.galpao__label');
+      openGalpaoLb(src, labelEl ? labelEl.textContent : 'Daytona');
+    });
+  });
+
+  function openGalpaoLb(src, label) {
+    if (!lb || !lbVideo) return;
+    muteAllGalpao();
+    if (src) lbVideo.src = src;
+    if (lbLabel) lbLabel.textContent = label || 'Daytona';
+    lbVideo.muted = false;
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('drawer-open');
+    lbVideo.play().catch(() => {});
+  }
+
+  function closeGalpaoLb() {
+    if (!lb || !lbVideo) return;
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('drawer-open');
+    lbVideo.pause();
+  }
+
+  if (lb) {
+    const lbClose = lb.querySelector('.galpao-lb__close');
+    const lbBackdrop = lb.querySelector('.galpao-lb__backdrop');
+    if (lbClose) lbClose.addEventListener('click', closeGalpaoLb);
+    if (lbBackdrop) lbBackdrop.addEventListener('click', closeGalpaoLb);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) closeGalpaoLb();
+    });
+  }
+
 });

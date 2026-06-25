@@ -43,20 +43,15 @@
   <!-- ================= HERO ================= -->
   <section id="hero" class="hero">
     <span id="topo" style="position:absolute;top:0;"></span>
-    <video autoplay muted loop playsinline poster="Assets/daytona-oficina-elevadores-carros-classicos.webp" class="hero__video">
-      <source src="Assets/daytona-video-oficina-elevadores.mp4" type="video/mp4"/>
-    </video>
-    <div class="hero__overlay"></div>
-    <div class="hero__overlay2"></div>
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+    <span class="hero__side" aria-hidden="true">Est. 2003 · Zona Oeste — RJ</span>
     <div class="container hero__inner">
       <div class="hero__content">
-        <div class="badge">
-          <span class="badge__dot"></span>
-          <span>Paciência · Rio de Janeiro</span>
-        </div>
+        <span class="hero__eyebrow">Oficina mecânica · Paciência, RJ</span>
         <h1 class="hero__title">
-          <span class="hero__title--mask">Daytona</span>
-          <span>Auto Center</span>
+          <span class="hero__title-1">Daytona</span>
+          <span class="hero__title-2">Auto Center</span>
         </h1>
         <p class="hero__sub">Oficina completa desde 2003. Suspensão, freio, escapamento, geometria e pneus — atendimento transparente, justo no preço e ágil.</p>
         <div class="hero__actions">
@@ -73,28 +68,6 @@
     <div class="flag-strip"></div>
   </section>
 
-  <!-- ================= PHOTO MARQUEE ================= -->
-  <section class="marquee-section">
-    <div class="marquee">
-      <div class="marquee__track" data-mq>
-        <div class="marquee__group">
-          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Interior da oficina Daytona Auto Center com elevadores automotivos e Fusca clássico" style="width:330px;"/>
-          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da Daytona com Kombis VW clássicas em manutenção" style="width:280px;"/>
-          <img src="Assets/daytona-fusca-elevador-servico-mecanico.webp" alt="Fusca vermelho clássico elevado em elevador automotivo na Daytona" style="width:380px;"/>
-          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da oficina Daytona com veículos VW clássicos" style="width:300px;object-position:center 30%;"/>
-          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Oficina Daytona Auto Center com elevadores e carros em serviço" style="width:340px;object-position:right;"/>
-        </div>
-        <div class="marquee__group" aria-hidden="true">
-          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="" style="width:330px;"/>
-          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="" style="width:280px;"/>
-          <img src="Assets/daytona-fusca-elevador-servico-mecanico.webp" alt="" style="width:380px;"/>
-          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="" style="width:300px;object-position:center 30%;"/>
-          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="" style="width:340px;object-position:right;"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= TEXT MARQUEE BAR ================= -->
   <div class="ticker">
     <div class="ticker__track">
@@ -103,22 +76,76 @@
     </div>
   </div>
 
-  <!-- ================= IMPACTO ================= -->
-  <section id="impacto" class="section">
-    <div class="container impact">
-      <div class="reveal">
+  <!-- ================= PROBLEMA & SOLUÇÃO (mapa dor → solução) ================= -->
+  <section id="impacto" class="section ps">
+    <div class="container">
+      <div class="ps__head reveal">
         <span class="eyebrow">Antes de pegar a estrada</span>
-        <h2 class="h2">Carro puxando<br/>pro lado? <span class="accent">Barulho</span><br/>na suspensão?</h2>
-        <p class="lead">Pequenos sinais viram problemas caros. Faça uma revisão completa numa oficina que avalia com transparência — e cobra um preço justo.</p>
+        <h2 class="h2">Você sente.<br/>A gente <span class="accent">resolve</span>.</h2>
+        <p class="lead">Cada sintoma tem uma causa — e a solução certa. Veja como a Daytona resolve o que tira o seu sossego na estrada.</p>
       </div>
-      <div class="reveal impact__solution" data-delay="120">
-        <h3 class="card__title">A solução Daytona</h3>
-        <div class="checks">
-          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Orçamento gratuito</strong><span>Sem compromisso e sem surpresas na conta.</span></div></div>
-          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Buscamos seu veículo</strong><span>Disponibilidade para buscar o carro até você.</span></div></div>
-          <div class="check-item"><span class="check-item__icon">✓</span><div><strong>Equipe grande e ágil</strong><span>Mais mãos qualificadas, serviço entregue rápido.</span></div></div>
+
+      <div class="ps__grid">
+        <!-- Card 1 -->
+        <article class="ps-card reveal">
+          <div class="ps-card__media">
+            <!-- Troque o src pela sua foto (mesmo nome) e ela aparece automaticamente -->
+            <img src="Assets/ps-geometria.webp" alt="Geometria e balanceamento na Daytona Auto Center" loading="lazy" onerror="this.style.display='none'">
+            <div class="ps-card__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Sua imagem aqui<br/>ps-geometria.webp</span>
+            </div>
+            <span class="ps-card__badge">Geometria</span>
+          </div>
+          <div class="ps-card__body">
+            <p class="ps-card__problem"><span class="ps__ico ps__ico--x" aria-hidden="true">✕</span>Carro puxando pro lado e direção trepidando</p>
+            <h3 class="ps-card__title"><span class="ps__ico ps__ico--check" aria-hidden="true">✓</span>Geometria de precisão</h3>
+            <p class="ps-card__desc">Alinhamento e balanceamento no ponto certo.</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="ps-card reveal" data-delay="80">
+          <div class="ps-card__media">
+            <img src="Assets/ps-suspensao.webp" alt="Revisão de suspensão na Daytona Auto Center" loading="lazy" onerror="this.style.display='none'">
+            <div class="ps-card__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Sua imagem aqui<br/>ps-suspensao.webp</span>
+            </div>
+            <span class="ps-card__badge">Suspensão</span>
+          </div>
+          <div class="ps-card__body">
+            <p class="ps-card__problem"><span class="ps__ico ps__ico--x" aria-hidden="true">✕</span>Barulho, folga e trancos na suspensão</p>
+            <h3 class="ps-card__title"><span class="ps__ico ps__ico--check" aria-hidden="true">✓</span>Suspensão revisada</h3>
+            <p class="ps-card__desc">Componentes trocados sem folga e sem ruído.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="ps-card reveal" data-delay="160">
+          <div class="ps-card__media">
+            <img src="Assets/ps-freio.webp" alt="Revisão de freio na Daytona Auto Center" loading="lazy" onerror="this.style.display='none'">
+            <div class="ps-card__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Sua imagem aqui<br/>ps-freio.webp</span>
+            </div>
+            <span class="ps-card__badge">Freio</span>
+          </div>
+          <div class="ps-card__body">
+            <p class="ps-card__problem"><span class="ps__ico ps__ico--x" aria-hidden="true">✕</span>Freio rangendo ou sem resposta</p>
+            <h3 class="ps-card__title"><span class="ps__ico ps__ico--check" aria-hidden="true">✓</span>Freio seguro</h3>
+            <p class="ps-card__desc">Pastilhas, discos e fluido revisados.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="ps__foot reveal">
+        <div class="ps__trust">
+          <span><i>✓</i>Orçamento gratuito</span>
+          <span><i>✓</i>Buscamos seu veículo</span>
+          <span><i>✓</i>Equipe grande e ágil</span>
         </div>
-        <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20gratuito." target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:26px;">Quero meu orçamento grátis</a>
+        <a href="https://wa.me/5521974559710?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20gratuito." target="_blank" rel="noopener" class="btn btn--primary ps__cta">Quero meu orçamento grátis →</a>
       </div>
     </div>
   </section>
@@ -133,32 +160,62 @@
       </div>
       <div class="services__grid">
         <article class="reveal service-card">
+          <img class="service-card__bg" src="Assets/servico-suspensao.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">01</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M8 22h8"/><path d="M9 2v3l6 2.5L9 10l6 2.5L9 15l6 2.5L9 20v2"/></svg>
+          </div>
           <h3 class="service-card__title">Suspensão</h3>
           <p class="service-card__desc">Diagnóstico e troca de componentes para veículos leves e pick-ups — sem ruídos, sem folgas.</p>
         </article>
         <article class="reveal service-card" data-delay="80">
+          <img class="service-card__bg" src="Assets/servico-freio.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">02</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="12" r="8"/><circle cx="11" cy="12" r="3"/><path d="M19 9.5v5a1.5 1.5 0 0 1-1.5 1.5H16a6 6 0 0 0 0-8h1.5A1.5 1.5 0 0 1 19 9.5Z"/></svg>
+          </div>
           <h3 class="service-card__title">Freio</h3>
           <p class="service-card__desc">Pastilhas, discos, fluido e revisão completa do sistema — sua segurança em primeiro lugar.</p>
         </article>
         <article class="reveal service-card" data-delay="160">
+          <img class="service-card__bg" src="Assets/servico-escapamento.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">03</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="11" width="12" height="5.5" rx="2.75"/><path d="M14 13.75h3.5a2.5 2.5 0 0 0 2.5-2.5V8"/><path d="M5 11V9M9 11V9"/></svg>
+          </div>
           <h3 class="service-card__title">Escapamento</h3>
           <p class="service-card__desc">Sistemas originais e adaptações esportivas — do econômico ao ronco de pista.</p>
         </article>
         <article class="reveal service-card">
+          <img class="service-card__bg" src="Assets/servico-geometria.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">04</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><path d="M5.5 5.5l2.5 2.5M18.5 5.5l-2.5 2.5"/></svg>
+          </div>
           <h3 class="service-card__title">Geometria</h3>
           <p class="service-card__desc">Alinhamento, balanceamento, cambagem, caster e montagem de pneus com precisão.</p>
         </article>
         <article class="reveal service-card" data-delay="80">
+          <img class="service-card__bg" src="Assets/servico-lubrificante.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">05</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2s6 6.6 6 10.3a6 6 0 0 1-12 0C6 9.8 12 3.2 12 3.2Z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg>
+          </div>
           <h3 class="service-card__title">Lubrificante</h3>
           <p class="service-card__desc">Óleos de motor e câmbio, nacionais e importados — a viscosidade certa pro seu carro.</p>
         </article>
         <article class="reveal service-card" data-delay="160">
+          <img class="service-card__bg" src="Assets/servico-pneus.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="service-card__shade" aria-hidden="true"></span>
           <span class="service-card__num">06</span>
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
+          </div>
           <h3 class="service-card__title">Pneus</h3>
           <p class="service-card__desc">Pneus novos e remold, com montagem na hora e balanceamento incluso.</p>
         </article>
@@ -167,27 +224,83 @@
   </section>
 
   <!-- ================= OFICINA ================= -->
-  <section id="oficina" class="section" style="background:#0d0d0f;">
+  <section id="oficina" class="section galpao" style="background:#0d0d0f;">
     <div class="container">
-      <div class="reveal section__head">
+      <div class="reveal section__head galpao__head">
         <span class="eyebrow">Dentro do galpão</span>
         <h2 class="h2">Oficina viva,<br/>operação real</h2>
         <p class="lead">Pé-direito alto, elevadores duplos e um acervo clássico que passa por aqui todo dia. Veja como é por dentro.</p>
       </div>
-      <div class="gallery">
-        <div class="reveal gallery__item">
-          <video autoplay muted loop playsinline poster="Assets/daytona-galpao-kombis-vw-classicas.webp">
+      <div class="galpao__grid">
+        <figure class="reveal galpao__item">
+          <video muted loop playsinline preload="metadata" poster="Assets/daytona-galpao-kombis-vw-classicas.webp">
             <source src="Assets/daytona-video-servico-execucao.mp4" type="video/mp4"/>
           </video>
-          <div class="gallery__shade"></div>
-          <div class="gallery__tag"><span class="badge__dot"></span><span>Serviço em execução</span></div>
-        </div>
-        <div class="reveal gallery__item" data-delay="100">
-          <img src="Assets/daytona-oficina-elevadores-carros-classicos.webp" alt="Interior da oficina Daytona Auto Center com elevadores automotivos e Fusca clássico em manutenção – Paciência RJ"/>
-        </div>
-        <div class="reveal gallery__item" data-delay="200">
-          <img src="Assets/daytona-galpao-kombis-vw-classicas.webp" alt="Galpão da Daytona Auto Center com Kombis VW clássicas em manutenção e rack de escapamentos – oficina em Paciência RJ"/>
-        </div>
+          <div class="galpao__overlay" aria-hidden="true"></div>
+          <div class="galpao__controls">
+            <button class="galpao__ctrl galpao__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+              <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            </button>
+            <button class="galpao__ctrl galpao__expand" type="button" aria-label="Expandir vídeo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+          </div>
+          <button class="galpao__playbig" type="button" aria-label="Reproduzir vídeo">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7.5v9a1 1 0 0 0 1.5.87l7.5-4.5a1 1 0 0 0 0-1.74l-7.5-4.5A1 1 0 0 0 9 7.5Z"/></svg>
+            <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2"/></svg>
+          </button>
+          <figcaption class="galpao__cap">
+            <span class="galpao__tag"><span class="galpao__dot"></span>Serviço em execução</span>
+            <span class="galpao__label">Mão na massa, todo dia</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal galpao__item" data-delay="120">
+          <video muted loop playsinline preload="metadata" poster="Assets/daytona-fusca-elevador-servico-mecanico.webp">
+            <source src="Assets/daytona-video-galpao-vw-classicos.mp4" type="video/mp4"/>
+          </video>
+          <div class="galpao__overlay" aria-hidden="true"></div>
+          <div class="galpao__controls">
+            <button class="galpao__ctrl galpao__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+              <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            </button>
+            <button class="galpao__ctrl galpao__expand" type="button" aria-label="Expandir vídeo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+          </div>
+          <button class="galpao__playbig" type="button" aria-label="Reproduzir vídeo">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7.5v9a1 1 0 0 0 1.5.87l7.5-4.5a1 1 0 0 0 0-1.74l-7.5-4.5A1 1 0 0 0 9 7.5Z"/></svg>
+            <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2"/></svg>
+          </button>
+          <figcaption class="galpao__cap">
+            <span class="galpao__tag"><span class="galpao__dot"></span>Acervo clássico</span>
+            <span class="galpao__label">Cultura VW</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal galpao__item" data-delay="200">
+          <video muted loop playsinline preload="metadata" poster="Assets/daytona-oficina-elevadores-carros-classicos.webp">
+            <source src="Assets/daytona-video-atendimento-oficina.mp4" type="video/mp4"/>
+          </video>
+          <div class="galpao__overlay" aria-hidden="true"></div>
+          <div class="galpao__controls">
+            <button class="galpao__ctrl galpao__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+              <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            </button>
+            <button class="galpao__ctrl galpao__expand" type="button" aria-label="Expandir vídeo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+          </div>
+          <button class="galpao__playbig" type="button" aria-label="Reproduzir vídeo">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7.5v9a1 1 0 0 0 1.5.87l7.5-4.5a1 1 0 0 0 0-1.74l-7.5-4.5A1 1 0 0 0 9 7.5Z"/></svg>
+            <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2"/></svg>
+          </button>
+          <figcaption class="galpao__cap">
+            <span class="galpao__tag"><span class="galpao__dot"></span>Atendimento</span>
+            <span class="galpao__label">Perto de você</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -469,6 +582,18 @@
       </div>
     </div>
   </aside>
+
+  <!-- ================= LIGHTBOX VÍDEO (GALPÃO) ================= -->
+  <div id="galpao-lb" class="galpao-lb" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vídeo ampliado">
+    <div class="galpao-lb__backdrop"></div>
+    <div class="galpao-lb__stage">
+      <video id="galpao-lb-video" class="galpao-lb__video" controls playsinline></video>
+      <span class="galpao-lb__brand"><span class="galpao__dot"></span><span id="galpao-lb-label">Daytona</span></span>
+      <button class="galpao-lb__close" type="button" aria-label="Fechar vídeo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- ================= WHATSAPP PREMIUM ================= -->
   <div class="wa-premium-container">
