@@ -93,16 +93,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('[data-slide]'));
     if (!slides.length) return;
     const dots = Array.from(document.querySelectorAll('[data-dot]'));
+    const idxEl = document.querySelector('[data-rv-index]');
+    const fillEl = document.querySelector('[data-rv-fill]');
     let i = 0;
     let timer;
     slides[0].classList.add('is-active');
+    const update = () => {
+      if (idxEl) idxEl.textContent = String(i + 1).padStart(2, '0');
+      if (fillEl) fillEl.style.width = ((i + 1) / slides.length * 100) + '%';
+    };
     const go = (n) => {
       slides[i].classList.remove('is-active');
       if (dots[i]) dots[i].classList.remove('is-active');
       i = (n + slides.length) % slides.length;
       slides[i].classList.add('is-active');
       if (dots[i]) dots[i].classList.add('is-active');
+      update();
     };
+    update();
     const reset = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 5500); };
     dots.forEach((d, idx) => d.addEventListener('click', () => { go(idx); reset(); }));
     const prev = document.querySelector('[data-prev]');
@@ -113,13 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ---------- FAQ acordeão ---------- */
+  const faqItems = Array.from(document.querySelectorAll('.faq__item'));
   document.querySelectorAll('.faq__q').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const ans = item.querySelector('.faq__a');
-      const open = item.classList.toggle('open');
-      ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0px';
-      ans.style.opacity = open ? '1' : '0';
+      const willOpen = !item.classList.contains('open');
+      // fecha todos os outros abertos
+      faqItems.forEach((other) => {
+        if (other !== item && other.classList.contains('open')) {
+          other.classList.remove('open');
+          const otherAns = other.querySelector('.faq__a');
+          otherAns.style.maxHeight = '0px';
+          otherAns.style.opacity = '0';
+        }
+      });
+      item.classList.toggle('open', willOpen);
+      ans.style.maxHeight = willOpen ? ans.scrollHeight + 'px' : '0px';
+      ans.style.opacity = willOpen ? '1' : '0';
     });
   });
 
