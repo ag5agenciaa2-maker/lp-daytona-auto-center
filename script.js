@@ -16,6 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- scrollspy: seção ativa na navbar ---------- */
+  (() => {
+    const navLinks = Array.from(document.querySelectorAll('.nav__link'));
+    if (!navLinks.length || !('IntersectionObserver' in window)) return;
+    const linkFor = (id) => navLinks.find((l) => l.getAttribute('href') === '#' + id);
+    const sections = navLinks
+      .map((l) => document.getElementById((l.getAttribute('href') || '').slice(1)))
+      .filter(Boolean);
+    if (!sections.length) return;
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const link = linkFor(e.target.id);
+        if (!link) return;
+        navLinks.forEach((l) => l.classList.remove('is-active'));
+        link.classList.add('is-active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach((s) => spy.observe(s));
+  })();
+
   /* ---------- drawer mobile ---------- */
   const menuToggle = document.getElementById('menu-toggle');
   const drawer = document.getElementById('drawer');
