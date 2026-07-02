@@ -1,5 +1,5 @@
 /* =========================================================
-   DAYTONA AUTO CENTER — script.js (Vanilla ES6)
+   DAYTONA AUTO CENTER - script.js (Vanilla ES6)
    Nav condense · reveals · counters · carrossel · FAQ
    · máscara de telefone · validação + envio WhatsApp
    ========================================================= */
@@ -216,35 +216,79 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open('https://wa.me/5521974559710?text=' + encodeURIComponent(waMsg), '_blank');
   });
 
-  /* ---------- whatsapp premium: balão + digitação ---------- */
-  const waBubble = document.getElementById('wa-message-bubble');
-  if (waBubble) {
-    const waTyping = document.getElementById('wa-typing');
-    const waReal = document.getElementById('wa-real-message');
-    const waBadge = document.getElementById('wa-notification');
-    const waClose = document.getElementById('wa-close-btn');
-    const waMain = document.getElementById('wa-main-btn');
+  /* ---------- whatsapp premium: balão V4 (viewport + typing) ---------- */
+  (function initWaPremium() {
+    const MODO_COMPLIANCE = false; // automotivo = nicho tranquilo → badge permitido
 
-    // mostra o balão após 6s, com 2,5s de "digitando"
-    setTimeout(() => {
-      waBubble.classList.add('show');
-      setTimeout(() => {
-        if (waTyping) waTyping.style.display = 'none';
-        if (waReal) waReal.style.display = 'block';
-      }, 2500);
-    }, 6000);
+    const bubble        = document.getElementById('wa-message-bubble');
+    const typing        = document.getElementById('wa-typing');
+    const realMessage   = document.getElementById('wa-real-message');
+    const badge         = document.getElementById('wa-notification');
+    const closeBtn      = document.getElementById('wa-close-btn');
+    const mainBtn       = document.getElementById('wa-main-btn');
+    const targetSection = document.getElementById('servicos'); // 3ª seção
 
-    if (waClose) waClose.addEventListener('click', (e) => {
+    if (!bubble || !typing || !realMessage || !closeBtn || !mainBtn || !targetSection) return;
+
+    const DELAY_BALAO            = 25000;
+    const DURATION_TYPING        = 2500;
+    const DURATION_BALAO_VISIVEL = 15000;
+    const DELAY_BADGE_APOS_SUMIR = 5000;
+
+    let triggered = false, autoHideTimer = null, badgeTimer = null, userClosed = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+          mainBtn.classList.add('visible');
+
+          setTimeout(() => {
+            if (userClosed) return;
+            bubble.classList.add('show');
+
+            setTimeout(() => {
+              if (userClosed) return;
+              typing.classList.add('is-hidden');
+              realMessage.classList.add('is-visible');
+              requestAnimationFrame(() => realMessage.classList.add('is-in'));
+            }, DURATION_TYPING);
+
+            autoHideTimer = setTimeout(() => {
+              if (userClosed) return;
+              bubble.classList.remove('show');
+              if (!MODO_COMPLIANCE && badge) {
+                badgeTimer = setTimeout(() => {
+                  if (userClosed) return;
+                  badge.classList.add('show');
+                }, DELAY_BADGE_APOS_SUMIR);
+              }
+            }, DURATION_BALAO_VISIVEL);
+          }, DELAY_BALAO);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(targetSection);
+
+    closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      waBubble.classList.remove('show');
-      setTimeout(() => { if (waBadge) waBadge.classList.add('show'); }, 2000);
+      userClosed = true;
+      bubble.classList.remove('show');
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
+      if (!MODO_COMPLIANCE && badge) {
+        setTimeout(() => { badge.classList.add('show'); }, DELAY_BADGE_APOS_SUMIR);
+      }
     });
 
-    if (waMain) waMain.addEventListener('click', () => {
-      waBubble.classList.remove('show');
-      if (waBadge) waBadge.classList.remove('show');
+    mainBtn.addEventListener('click', () => {
+      bubble.classList.remove('show');
+      if (badge) badge.classList.remove('show');
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
     });
-  }
+  })();
 
   /* ---------- galpão: som + expandir (lightbox) ---------- */
   const galpaoItems = document.querySelectorAll('.galpao__item');

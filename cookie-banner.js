@@ -1,5 +1,5 @@
 /**
- * Cookie Banner Universal — Skill Profissional
+ * Cookie Banner Universal - Skill Profissional
  * Versão: 2.1.0 (Refinada AG5)
  * Sem dependências externas. Funciona em qualquer site HTML/JS.
  * LGPD (Brasil) / GDPR (Europa) compliant.
@@ -9,7 +9,7 @@
     'use strict';
 
     /* ============================================================
-       CONFIGURAÇÕES — Edite aqui para personalizar
+       CONFIGURAÇÕES - Edite aqui para personalizar
        ============================================================ */
     var CONFIG = {
         storageKey: 'site_cookie_consent',           // Chave no localStorage
@@ -67,7 +67,7 @@
     }
 
     /* ============================================================
-       TOGGLE DO RODAPÉ — reflete o estado das preferências
+       TOGGLE DO RODAPÉ - reflete o estado das preferências
        ============================================================ */
     function updateFooterToggleIcon() {
         var toggle = document.getElementById('cookie-toggle');
@@ -276,7 +276,7 @@
         var saved = load();
 
         if (saved && saved.decided && !isExpired(saved.timestamp)) {
-            // Usuário já decidiu — aplica preferências e mostra botão flutuante
+            // Usuário já decidiu - aplica preferências e mostra botão flutuante
             state = Object.assign({}, state, saved);
             dispatch(state);
             if (CONFIG.showFloatingBtn) showFloatingBtn();
@@ -284,7 +284,7 @@
             return;
         }
 
-        // Primeira visita — mostra o banner
+        // Primeira visita - mostra o banner
         setTimeout(showBanner, CONFIG.bannerDelay);
         updateFooterToggleIcon();
     }

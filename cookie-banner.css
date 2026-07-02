@@ -1,6 +1,6 @@
 /* ==========================================================
-   COOKIE BANNER UNIVERSAL — Skill Profissional (Versão AG5)
-   Versão: 2.1.0 — Adaptado p/ Daytona Auto Center
+   COOKIE BANNER UNIVERSAL - Skill Profissional (Versão AG5)
+   Versão: 2.1.0 - Adaptado p/ Daytona Auto Center
    Accent dourado e fundo asfalto integrados ao style.css
    ========================================================== */
 
@@ -150,7 +150,7 @@
     letter-spacing: 0.1px;
 }
 
-/* Primário — Accent dourado com texto asfalto p/ contraste */
+/* Primário - Accent dourado com texto asfalto p/ contraste */
 .ck-btn--primary {
     background: var(--ck-accent);
     color: #0A0A0A;
@@ -162,7 +162,7 @@
     transform: translateY(-1px);
 }
 
-/* Outline — Borda sutil */
+/* Outline - Borda sutil */
 .ck-btn--outline {
     background: transparent;
     border: 1px solid rgba(244, 242, 238, 0.14);
@@ -174,7 +174,7 @@
     color: rgba(244, 242, 238, 0.7);
 }
 
-/* Ghost — Link underline */
+/* Ghost - Link underline */
 .ck-btn--ghost {
     background: transparent;
     color: rgba(244, 242, 238, 0.4);
@@ -381,7 +381,7 @@
     background: var(--ck-modal-footer-bg);
 }
 
-/* Botões do footer do modal (fundo claro) — texto legível */
+/* Botões do footer do modal (fundo claro) - texto legível */
 .ck-modal__footer .ck-btn--outline {
     border-color: rgba(0, 0, 0, 0.18);
     color: #4a4a4a;
@@ -428,7 +428,7 @@
 }
 
 /* ============================================================
-   COOKIE TOGGLE NO RODAPÉ — estilo iOS minimalista (AG5)
+   COOKIE TOGGLE NO RODAPÉ - estilo iOS minimalista (AG5)
    ============================================================ */
 #cookie-toggle.active #cookie-toggle-dot {
     left: 15px !important;
