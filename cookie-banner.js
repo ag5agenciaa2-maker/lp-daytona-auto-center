@@ -1,6 +1,6 @@
 /**
- * Cookie Banner Universal - Skill Profissional
- * Versão: 2.1.0 (Refinada AG5)
+ * Cookie Banner Universal — Skill Profissional
+ * Versão: 3.0.0 (Padrão AG5)
  * Sem dependências externas. Funciona em qualquer site HTML/JS.
  * LGPD (Brasil) / GDPR (Europa) compliant.
  */
@@ -8,21 +8,14 @@
 (function () {
     'use strict';
 
-    /* ============================================================
-       CONFIGURAÇÕES - Edite aqui para personalizar
-       ============================================================ */
     var CONFIG = {
-        storageKey: 'site_cookie_consent',           // Chave no localStorage
-        expiryDays: 365,                             // Dias até expirar o consentimento
-        bannerDelay: 600,                            // ms antes de mostrar o banner
-        showFloatingBtn: false,                      // Mostrar botão flutuante após fechar (Padrão AG5: link no rodapé)
-        privacyPolicyUrl: 'politica-de-privacidade.html', // URL da política de privacidade
+        storageKey: 'site_cookie_consent',
+        expiryDays: 365,
+        bannerDelay: 600,
+        showFloatingBtn: false,
+        privacyPolicyUrl: 'politica-de-privacidade.html',
     };
 
-    /* ============================================================
-       MAPEAMENTO DE TOGGLES
-       Adicione/remova categorias aqui conforme o HTML
-       ============================================================ */
     var TOGGLE_MAP = {
         'ck-functional': 'functional',
         'ck-analytics': 'analytics',
@@ -30,9 +23,6 @@
         'ck-advertising': 'advertising',
     };
 
-    /* ============================================================
-       ESTADO
-       ============================================================ */
     var state = {
         necessary: true,
         functional: false,
@@ -43,9 +33,6 @@
         timestamp: null,
     };
 
-    /* ============================================================
-       PERSISTÊNCIA
-       ============================================================ */
     function load() {
         try {
             var raw = localStorage.getItem(CONFIG.storageKey);
@@ -58,7 +45,7 @@
             prefs.timestamp = Date.now();
             prefs.decided = true;
             localStorage.setItem(CONFIG.storageKey, JSON.stringify(prefs));
-        } catch (e) { /* localStorage indisponível */ }
+        } catch (e) { }
     }
 
     function isExpired(timestamp) {
@@ -66,32 +53,6 @@
         return Date.now() - timestamp > CONFIG.expiryDays * 86400000;
     }
 
-    /* ============================================================
-       TOGGLE DO RODAPÉ - reflete o estado das preferências
-       ============================================================ */
-    function updateFooterToggleIcon() {
-        var toggle = document.getElementById('cookie-toggle');
-        if (!toggle) return;
-        var prefs = load();
-        if (prefs && prefs.decided) {
-            // Aceitou algum cookie opcional → ativo (bolinha à direita, dourada)
-            if (prefs.functional || prefs.analytics || prefs.performance || prefs.advertising) {
-                toggle.classList.remove('inactive');
-                toggle.classList.add('active');
-            } else {
-                // Só necessários → inativo (bolinha à esquerda, cinza)
-                toggle.classList.remove('active');
-                toggle.classList.add('inactive');
-            }
-        } else {
-            // Ainda não decidiu → estado padrão ativo
-            toggle.classList.add('active');
-        }
-    }
-
-    /* ============================================================
-       BANNER
-       ============================================================ */
     function showBanner() {
         var el = document.getElementById('ck-banner');
         if (!el) return;
@@ -110,17 +71,11 @@
         }
     }
 
-    /* ============================================================
-       BOTÃO FLUTUANTE / LINKS
-       ============================================================ */
     function showFloatingBtn() {
         var btn = document.getElementById('ck-prefs-btn');
         if (btn) btn.classList.add('ck-prefs-btn--visible');
     }
 
-    /* ============================================================
-       MODAL
-       ============================================================ */
     function openModal() {
         var modal = document.getElementById('ck-modal');
         if (!modal) return;
@@ -160,52 +115,46 @@
         return result;
     }
 
-    /* ============================================================
-       AÇÕES
-       ============================================================ */
     function acceptAll() {
         state = { necessary: true, functional: true, analytics: true, performance: true, advertising: true, decided: true };
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
-        toast('Todos os cookies aceitos.');
         updateFooterToggleIcon();
+        toast('Todos os cookies aceitos.');
     }
 
     function rejectAll() {
         state = { necessary: true, functional: false, analytics: false, performance: false, advertising: false, decided: true };
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
-        toast('Apenas cookies necessários salvos.');
         updateFooterToggleIcon();
+        toast('Apenas cookies necessários salvos.');
     }
 
     function saveCustom() {
         var custom = readToggles();
         state = Object.assign({}, custom, { decided: true });
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
-        toast('Suas preferências foram salvas.');
         updateFooterToggleIcon();
+        toast('Suas preferências foram salvas.');
     }
 
-    /* ============================================================
-       EVENTO CUSTOMIZADO (integração com analytics/pixels)
-       ============================================================ */
     function dispatch(prefs) {
         try {
             window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: { preferences: prefs } }));
-        } catch (e) { /* IE fallback */ }
+        } catch (e) { }
     }
 
-    /* ============================================================
-       TOAST DE FEEDBACK
-       ============================================================ */
     function toast(message) {
         var existing = document.getElementById('ck-toast');
         if (existing) existing.remove();
@@ -230,37 +179,29 @@
         }, 3000);
     }
 
-    /* ============================================================
-       EVENT LISTENERS
-       ============================================================ */
     function on(id, event, handler) {
         var el = document.getElementById(id);
         if (el) el.addEventListener(event, handler);
     }
 
     function bindEvents() {
-        // Banner
         on('ck-accept-all', 'click', acceptAll);
         on('ck-reject', 'click', rejectAll);
         on('ck-customize', 'click', openModal);
 
-        // Modal
         on('ck-modal-close', 'click', closeModal);
         on('ck-modal-overlay', 'click', closeModal);
         on('ck-modal-accept-all', 'click', acceptAll);
         on('ck-modal-reject', 'click', rejectAll);
         on('ck-modal-save', 'click', saveCustom);
 
-        // Botão flutuante
         on('ck-prefs-btn', 'click', openModal);
 
-        // Link no rodapé (Novo padrão AG5)
         on('ck-prefs-link', 'click', function (e) {
             e.preventDefault();
             openModal();
         });
 
-        // ESC fecha o modal
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 var modal = document.getElementById('ck-modal');
@@ -269,14 +210,29 @@
         });
     }
 
-    /* ============================================================
-       INICIALIZAÇÃO
-       ============================================================ */
+    function updateFooterToggleIcon() {
+        var toggle = document.getElementById('cookie-toggle');
+        if (!toggle) return;
+
+        var prefs = load();
+        if (prefs && prefs.decided) {
+            if (prefs.functional || prefs.analytics || prefs.performance || prefs.advertising) {
+                toggle.classList.remove('inactive');
+                toggle.classList.add('active');
+            } else {
+                toggle.classList.remove('active');
+                toggle.classList.add('inactive');
+            }
+        } else {
+            toggle.classList.remove('inactive');
+            toggle.classList.add('active');
+        }
+    }
+
     function init() {
         var saved = load();
 
         if (saved && saved.decided && !isExpired(saved.timestamp)) {
-            // Usuário já decidiu - aplica preferências e mostra botão flutuante
             state = Object.assign({}, state, saved);
             dispatch(state);
             if (CONFIG.showFloatingBtn) showFloatingBtn();
@@ -284,14 +240,10 @@
             return;
         }
 
-        // Primeira visita - mostra o banner
-        setTimeout(showBanner, CONFIG.bannerDelay);
         updateFooterToggleIcon();
+        setTimeout(showBanner, CONFIG.bannerDelay);
     }
 
-    /* ============================================================
-       API PÚBLICA
-       ============================================================ */
     window.CookieBanner = {
         open: openModal,
         acceptAll: acceptAll,
@@ -302,9 +254,6 @@
         reset: function () { localStorage.removeItem(CONFIG.storageKey); },
     };
 
-    /* ============================================================
-       BOOTSTRAP
-       ============================================================ */
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () { bindEvents(); init(); });
     } else {
